@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Gallery</title>
+    <link rel="shortcut icon" type="images" href="images/logo.jpg">
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://kit.fontawesome.com/4c6b92ff6f.js" crossorigin="anonymous"></script>
+
+    <style>
+        .price-tag {
+            color: #007bff; /* Blue color for the price */
+            font-size: 20px;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .price-tag:hover {
+            color: #0056b3; /* Darker blue on hover */
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- header section starts  -->
+
+    <header>
+
+        <a href="#" class="logo"><i class="fa fa-paint-brush" aria-hidden="true"></i> Vaddeswaram Art Gallery</a>
+
+        <div id="menu-bar" class="fas fa-bars"></div>
+
+        <nav class="navbar">
+            <a href="#home">home</a>
+            <a href="#image">image</a>
+            <a href="#post">post</a>
+            <a href="#team">team</a>
+            <a href="#contact">contact</a>
+        </nav>
+
+    </header>
+
+    <!-- header section ends -->
+
+    <!-- home section starts  -->
+
+    <section class="home" id="home">
+
+        <div class="content">
+            <span>Vaddeswaram Art Gallery</span>
+            <h3 style="color:rgb(3, 246, 238);">Art is a part of life</h3>
+            <a href="#" class="btn">learn more</a>
+        </div>
+
+    </section>
+
+    <!-- home section ends -->
+
+    <section class="step-container">
+
+        <div class="step">
+            <span>01</span>
+            <h3>Drawing with pencils</h3>
+            <p>Explore the delicate art of pencil drawing, capturing fine details and emotions with every stroke.</p>
+            <a href="#" class="btn">learn more</a>
+        </div>
+
+        <div class="step">
+            <span>02</span>
+            <h3>Watercolors</h3>
+            <p>Experience the vibrant flow of watercolors, blending hues to create soft, expressive, and dynamic art.</p>
+            <a href="#" class="btn">learn more</a>
+        </div>
+
+        <div class="step">
+            <span>03</span>
+            <h3>Oil pastels</h3>
+            <p>Discover the rich, bold textures of oil pastels, where vibrant colors bring depth to every piece.</p>
+            <a href="#" class="btn">learn more</a>
+        </div>
+
+    </section>
+
+    <!-- image section starts  -->
+
+    <section class="image" id="image">
+
+        <div class="heading">
+            <h1>top images</h1>
+            <img src="images/header-img.png" alt="">
+        </div>
+
+        <div class="box-container">
+
+            <div class="box">
+                <img src="images/art/img1.jpg" alt="">
+                <div class="info">
+                    <span class="price-tag" onclick="openModal('₹5000')">₹5000</span> <!-- Price for Image 1 -->
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="images/art/img2.jpeg" alt="">
+                <div class="info">
+                    <span class="price-tag" onclick="openModal('₹6000')">₹6000</span> <!-- Price for Image 2 -->
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="images/art/img3.jpg" alt="">
+                <div class="info">
+                    <span class="price-tag" onclick="openModal('₹5500')">₹5500</span> <!-- Price for Image 3 -->
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="images/art/img4.jpg" alt="">
+                <div class="info">
+                    <span class="price-tag" onclick="openModal('₹7000')">₹7000</span> <!-- Price for Image 4 -->
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="images/art/img5.jpg" alt="">
+                <div class="info">
+                    <span class="price-tag" onclick="openModal('₹4800')">₹4800</span> <!-- Price for Image 5 -->
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="images/art/img6.jpg" alt="">
+                <div class="info">
+                    <span class="price-tag" onclick="openModal('₹6200')">₹6200</span> <!-- Price for Image 6 -->
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="images/art/img7.jpg" alt="">
+                <div class="info">
+                    <span class="price-tag" onclick="openModal('₹5300')">₹5300</span> <!-- Price for Image 7 -->
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="images/art/img8.jpg" alt="">
+                <div class="info">
+                    <span class="price-tag" onclick="openModal('₹5000')">₹5000</span> <!-- Price for Image 8 -->
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="images/art/img9.jpg" alt="">
+                <div class="info">
+                    <span class="price-tag" onclick="openModal('₹5900')">₹5900</span> <!-- Price for Image 9 -->
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="images/art/img10.jpg" alt="">
+                <div class="info">
+                    <span class="price-tag" onclick="openModal('₹6100')">₹6100</span> <!-- Price for Image 10 -->
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="images/art/img11.jpeg" alt="">
+                <div class="info">
+                    <span class="price-tag" onclick="openModal('₹6400')">₹6400</span> <!-- Price for Image 11 -->
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="images/art/img12.jpg" alt="">
+                <div class="info">
+                    <span class="price-tag" onclick="openModal('₹7200')">₹7200</span> <!-- Price for Image 12 -->
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- image section ends -->
+
+    <!-- post section starts  -->
+
+    <section class="post" id="post">
+
+        <div class="heading">
+            <h1>our previous post</h1>
+            <img src="images/header-img.png" alt="">
+        </div>
+
+        <div class="row">
+
+            <div class="box-container">
+                <div class="box">
+                    <img src="images/client-1.jpg" alt="">
+                    <div class="info">
+                        <h3>Art</h3>
+                        <p> <i class="fas fa-quote-left"></i> Capturing the warmth of a sunset, where vibrant hues of oil pastels bring nature to life.<i class="fas fa-quote-right"></i>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="images/client-2.jpg" alt="">
+                    <div class="info">
+                        <h3>Color</h3>
+                        <p> <i class="fas fa-quote-left"></i> Shades of creativity—capturing fine details with the elegance and simplicity of pencil strokes.<i class="fas fa-quote-right"></i>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="images/client-3.jpg" alt="">
+                    <div class="info">
+                        <h3>Creativity</h3>
+                        <p> <i class="fas fa-quote-left"></i> Graceful lines of creativity—bringing elegance to life through the art of pencil sketching.<i class="fas fa-quote-right"></i>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- post section ends -->
+
+    <!-- team section starts  -->
+
+    <section class="team" id="team">
+
+        <div class="heading">
+            <h1>meet our team</h1>
+            <img src="images/header-img.png" alt="">
+        </div>
+
+        <div class="box-container">
+
+            <div class="box">
+                <img src="images/team-1.jpg" alt="">
+                <h3>sagar</h3>
+                <span>User Experience Designer</span>
+                <div class="social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="images/team-2.jpg" alt="">
+                <h3>Sai Deepak</h3>
+                <span>Graphic Designer:</span>
+                <div class="social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="images/team-3.jpg" alt="">
+                <h3>Trinadh</h3>
+                <span>Technical Support</span>
+                <div class="social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- team section ends -->
+
+    <!-- contact section starts  -->
+
+    <section class="contact" id="contact">
+
+        <div class="heading">
+            <h1>contact us</h1>
+            <img src="images/header-img.png" alt="">
+        </div>
+
+        <div class="row">
+
+            <form action="">
+                <input type="text" placeholder="your name" class="box">
+                <input type="email" placeholder="your email" class="box">
+                <textarea name="" placeholder="your message" id="" cols="30" rows="10" class="box"></textarea>
+                <input type="submit" value="send message" class="btn">
+            </form>
+
+        </div>
+
+    </section>
+
+    <!-- contact section ends -->
+
+    <!-- Footer section starts  -->
+    <footer>
+        <p>&copy; 2024 Vaddeswaram Art Gallery. All Rights Reserved.</p>
+    </footer>
+    <!-- Footer section ends  -->
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p id="modal-text"></p>
+            <a id="payment-link" href="#" target="_blank" class="btn">Proceed to Payment</a>
+        </div>
+    </div>
+
+    <script>
+        function openModal(price) {
+            document.getElementById('modal-text').innerText = "You have selected an item priced at " + price + ".";
+            document.getElementById('payment-link').setAttribute('href', 'https://your-payment-gateway-link.com'); // Update this link
+            document.getElementById("myModal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+
+        window.onclick = function (event) {
+            if (event.target == document.getElementById("myModal")) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+
+</html>
